@@ -4,7 +4,7 @@
  * @Author: Ruin 🍭
  * @Date: 2022-01-25 16:22:24
  * @LastEditors: 刘引
- * @LastEditTime: 2022-01-25 17:31:49
+ * @LastEditTime: 2022-02-07 12:43:43
 -->
 <script setup lang="ts">
 
@@ -13,6 +13,7 @@
 
 <template>
   <router-view></router-view>
+  <div>修改后的效果</div>
 </template>
 
 <style>
