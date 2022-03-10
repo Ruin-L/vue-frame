@@ -1,4 +1,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box !important;
 }
+li {
+  list-style: none;
+}
+.w {
+  width: 80vw;
+  margin: 0 auto;
+}
+$fzt: 20px;

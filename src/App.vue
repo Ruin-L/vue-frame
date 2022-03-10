@@ -4,25 +4,20 @@
  * @Author: Ruin 🍭
  * @Date: 2022-01-25 16:22:24
  * @LastEditors: 刘引
- * @LastEditTime: 2022-02-07 12:43:43
+ * @LastEditTime: 2022-03-10 10:55:38
 -->
-<script setup lang="ts">
-
-
-</script>
 
 <template>
+  <Header></Header>
   <router-view></router-view>
-  <div>修改后的效果</div>
+  <Footer></Footer>
 </template>
 
+<script setup lang="ts">
+import Header from "@/components/Header.vue"
+import Footer from "@/components/Footer.vue"
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./assets/scss/index.scss";
 </style>
