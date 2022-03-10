@@ -4,7 +4,7 @@
  * @Author: Ruin 🍭
  * @Date: 2022-03-10 10:11:06
  * @LastEditors: 刘引
- * @LastEditTime: 2022-03-10 11:56:34
+ * @LastEditTime: 2022-03-10 13:02:31
 -->
 <template>
   <div class="root-home">
@@ -15,7 +15,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onBeforeMount, onMounted, onUnmounted, onUpdated, reactive, ref } from 'vue';
+import { onBeforeMount, onDeactivated, onMounted, onUpdated, reactive, ref } from 'vue';
 let res = ref('我是响应式数据')
 let moreRes = reactive([{ title: '我是复杂数据' }, { title: '我是复杂数据' }, { title: '我是复杂数据' }])
 const getData = () => {
@@ -32,24 +32,18 @@ const changeData = () => {
   console.log('触发');
 }
 // localStorage.setItem('key', res)
-// dom结构还未完成渲染
+
 onBeforeMount(() => {
-  console.log('触发');
-
+  console.log('dom渲染之前触发');
 })
-// dom结构渲染完成
 onMounted(() => {
-  console.log('dom渲染完毕');
-
+  console.log('dom渲染完毕时触发')
 })
-// 在界面数据更改时会触发
 onUpdated(() => {
-  console.log('触发');
-
+  console.log('在界面数据更改时会触发');
 })
-onUnmounted(() => {
-  // res.value = '我的值被更改'
-  // console.log(res.value);
+onDeactivated(() => {
+  console.log('组件销毁时触发');
 })
 
 
