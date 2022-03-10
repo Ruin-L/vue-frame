@@ -4,10 +4,10 @@
  * @Author: Ruin 🍭
  * @Date: 2022-03-10 10:15:34
  * @LastEditors: 刘引
- * @LastEditTime: 2022-03-10 10:51:31
+ * @LastEditTime: 2022-03-10 13:25:51
 -->
 <template>
-  <div class="header-root">我是足部组件</div>
+  <div class="header-root">我是公共足部组件</div>
 </template>
 <script setup lang="ts">
 </script>

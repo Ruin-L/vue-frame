@@ -4,20 +4,34 @@
  * @Author: Ruin 🍭
  * @Date: 2022-01-25 17:00:37
  * @LastEditors: 刘引
- * @LastEditTime: 2022-01-25 17:00:38
+ * @LastEditTime: 2022-03-10 15:55:57
  */
 import { createStore } from "vuex";
 export default createStore({
+  // 存放数据
   state: {
     userInfo: {
-      name: "yk",
+      name: "testVueX",
     },
   },
+  // 同步方法更改state中属性的状态
   mutations: {
     getUserInfo(state, name) {
-      state.userInfo.name = name;
+      state.userInfo.name = "我的值被改动";
+      console.log("vueX中的方法触发");
+    },
+    setAsyncInfo(state) {
+      state.userInfo.name = "setTimeOut";
     },
   },
-  actions: {},
+  // 异步调用mutations中的方法更改state状态 并不能直接更改
+  actions: {
+    setData(context) {
+      setTimeout(() => {
+        context.commit("setAsyncInfo");
+      }, 1000);
+    },
+  },
+  //state中的数据做过滤等简单处理
   getters: {},
 });
