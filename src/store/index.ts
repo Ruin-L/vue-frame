@@ -4,7 +4,7 @@
  * @Author: Ruin 🍭
  * @Date: 2022-01-25 17:00:37
  * @LastEditors: 刘引
- * @LastEditTime: 2022-03-10 15:55:57
+ * @LastEditTime: 2022-07-26 16:38:41
  */
 import { createStore } from "vuex";
 export default createStore({
@@ -32,6 +32,6 @@ export default createStore({
       }, 1000);
     },
   },
-  //state中的数据做过滤等简单处理
+  //state中的数据做过滤等简单处理，相当于是计算属性
   getters: {},
 });
