@@ -7,23 +7,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "dayjs": "^1.11.4",
-    "element-plus": "^2.2.10",
-    "lodash": "^4.17.21",
+    "axios": "^1.4.0",
+    "dayjs": "^1.11.9",
+    "element-plus": "^2.3.8",
     "normalize.css": "^8.0.1",
-    "pinia": "^2.0.17",
-    "qs": "^6.11.0",
-    "vue": "^3.2.37",
-    "vue-router": "^4.1.2"
+    "pinia": "^2.1.6",
+    "qs": "^6.11.2",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
-    "@types/node": "^18.6.1",
-    "@vitejs/plugin-vue": "^3.0.1",
-    "sass": "^1.54.0",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.3",
-    "vue-tsc": "^0.39.0",
-    "vuex": "^4.0.2"
+    "@types/node": "^18.17.1",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "sass": "^1.64.2",
+    "typescript": "^4.9.5",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1",
+    "vite": "^4.4.7",
+    "vue-tsc": "^0.39.5"
   }
 }

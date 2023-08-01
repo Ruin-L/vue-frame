@@ -9,6 +9,5 @@
 <template>
   <div class="header-root">我是公共足部组件</div>
 </template>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <style lang="scss" scoped></style>
