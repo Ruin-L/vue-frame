@@ -20,7 +20,9 @@ import 'normalize.css/normalize.css'
 createApp(App)
   .use(router)
   .use(createPinia())
-  .use(ElementPlus)
+  .use(ElementPlus,{
+      locale: zhCn,
+  })
   .component('Foot', Foot)
   .component('Head', Head)
   .mount('#app')
