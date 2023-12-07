@@ -1,7 +1,7 @@
 <template>
-  <Header></Header>
+  <Head></Head>
   <div>根组件{{ store.count }}</div>
-  <Footer></Footer>
+  <Foot></Foot>
 </template>
 
 <script setup lang="ts">
