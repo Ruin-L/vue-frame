@@ -23,9 +23,4 @@ const getItem = (data: unknown) => {
     data
   })
 }
-
-const HomeApi = {
-  getInfo,
-  getItem
-}
-export default HomeApi
+export { getInfo, getItem }

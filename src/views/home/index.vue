@@ -8,12 +8,12 @@
 <script setup lang="ts">
 import { computed, watch, onUpdated, ref, reactive, onBeforeMount } from 'vue'
 import news from './components/news.vue'
-import HomeApi from '@/services/home'
+import { getInfo, getItem } from '@/services/home'
 
 // get请求
 const getDataFromApi = async () => {
   try {
-    const res = await HomeApi.getInfo({ type: 'scorpio', time: 'today' })
+    const res = await getInfo({ type: 'scorpio', time: 'today' })
     console.debug(res, '获取到的数据')
   } catch (error) {
     console.error('get获取星座数据报错', error)
