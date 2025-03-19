@@ -1,3 +1,11 @@
+<!--
+ * @Description: {{ByRuin}}
+ * @Version: 2.0
+ * @Author: Ruin 🍭
+ * @Date: 2022-03-10 10:11:06
+ * @LastEditors: 刘引 liu.yin.work@foxmail.com
+ * @LastEditTime: 2023-08-01 15:45:57
+-->
 <template>
   <div class="root-home">
     <news></news>

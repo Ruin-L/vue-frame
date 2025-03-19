@@ -1,3 +1,11 @@
+<!--
+ * @Description: {{ByRuin}}
+ * @Version: 2.0
+ * @Author: Ruin 🍭
+ * @Date: 2022-03-10 10:11:06
+ * @LastEditors: 刘引
+ * @LastEditTime: 2022-07-26 14:42:06
+-->
 <template>
   <div class="root-home">
     <p>我是home组件</p>
@@ -6,33 +14,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, watch, onUpdated, ref, reactive, onBeforeMount } from 'vue'
+import { computed, watch, onUpdated, ref, reactive } from 'vue';
 import news from './components/news.vue'
-import { getInfo, getItem } from '@/services/home'
-
-// get请求
-const getDataFromApi = async () => {
-  try {
-    const res = await getInfo({ type: 'scorpio', time: 'today' })
-    console.debug(res, '获取到的数据')
-  } catch (error) {
-    console.error('get获取星座数据报错', error)
-  }
-}
-
-// post请求
-const postDataFromApi = async () => {
-  try {
-  } catch (error) {
-    console.error('post获取数据报错', error)
-  }
-}
-
-// dom加载前调用
-onBeforeMount(() => {
-  // getDataFromApi()
-  // postDataFromApi()
-})
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>

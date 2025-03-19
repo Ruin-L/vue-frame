@@ -12,23 +12,19 @@ import axios from 'axios' //引入 axios库
 import qs from 'qs' //引入 node中自带的qs模块（数据格式转换）
 /* 2.全局默认配置 */
 let baseURL
-let process: any = {
-  env: {
-    NODE_ENV: 'development'
-  }
-}
+let process: any
 // 判断开发环境（一般用于本地代理）
 if (process.env.NODE_ENV === 'development') {
   // 开发环境
-  baseURL = 'https://api.vvhan.com/' // 你设置的本地代理请求（跨域代理），下文会详细介绍怎么进行跨域代理
+  baseURL = 'http://www.liulongbin.top:3006' // 你设置的本地代理请求（跨域代理），下文会详细介绍怎么进行跨域代理
 } else {
   // 编译环境
   if (process.env.type === 'test') {
     // 测试环境
-    baseURL = 'https://api.vvhan.com/'
+    baseURL = 'http://www.liulongbin.top:3006'
   } else {
     // 正式环境
-    baseURL = 'https://api.vvhan.com/'
+    baseURL = 'http://www.liulongbin.top:3006'
   }
 }
 // 配置axios的属性
@@ -67,7 +63,6 @@ Axios.interceptors.request.use(
     return Promise.reject(error)
   }
 )
-
 Axios.interceptors.response.use(
   (res) => {
     //请求响应后拦截
