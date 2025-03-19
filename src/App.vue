@@ -1,4 +1,4 @@
-<!-- 基于rspack打包 -->
+<!-- 基于rspack打包gitee -->
 <template>
   <router-view></router-view>
 </template>
