@@ -1,11 +1,3 @@
-<!--
- * @Description: {{ByRuin}}
- * @Version: 2.0
- * @Author: Ruin 🍭
- * @Date: 2022-03-10 10:11:06
- * @LastEditors: 刘引
- * @LastEditTime: 2022-07-26 14:42:06
--->
 <template>
   <div class="root-home">
     <p>我是home组件</p>
@@ -14,9 +6,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, watch, onUpdated, ref, reactive } from 'vue';
+import { computed, watch, onUpdated, ref, reactive } from 'vue'
 import news from './components/news.vue'
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
