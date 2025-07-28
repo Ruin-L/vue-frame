@@ -1,7 +1,7 @@
 <template>
   <div class="root-home">
     <p>我是home组件</p>
-    <el-button>按钮</el-button>
+
     <news></news>
   </div>
 </template>

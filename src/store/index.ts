@@ -8,7 +8,7 @@
  */
 import { defineStore } from 'pinia' // 定义容器
 
-export let useMain = defineStore('useStore', {
+export let useStore = defineStore('useStore', {
   /**
    * 存储全局状态
    * 1.必须是箭头函数: 为了在服务器端渲染的时候避免交叉请求导致数据状态污染
