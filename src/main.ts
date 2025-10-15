@@ -10,10 +10,12 @@ import { createApp } from 'vue'
 import router from './router/index' //引入vue-router
 import App from './App.vue'
 import { createPinia } from 'pinia'
-
+import { startVersionCheck } from './utils/versionCheck'
 import TDesign from 'tdesign-vue-next'
 import 'tdesign-vue-next/es/style/index.css'
 import 'normalize.css/normalize.css'
+// 启动版本检测服务 (20秒检查一次)
+startVersionCheck(1000 * 20)
 // 挂载到app上
 createApp(App)
   .use(router)
