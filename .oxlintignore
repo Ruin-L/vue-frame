@@ -1,9 +1,0 @@
-node_modules/
-dist/
-coverage/
-.temp/
-.tmp/
-.eslintcache
-.idea/
-.vscode/
-.DS_Store
