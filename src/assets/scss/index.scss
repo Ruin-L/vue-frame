@@ -11,3 +11,14 @@ li {
   margin: 0 auto;
 }
 $fzt: 20px;
+.t-notification__detail {
+  // padding: 0 20px;
+
+  .t-notification__detail-item {
+    padding: 6px 12px;
+
+    &:nth-child(1) {
+      color: #0052d9;
+    }
+  }
+}
