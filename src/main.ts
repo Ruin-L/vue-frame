@@ -14,12 +14,10 @@ import { startVersionCheck } from './utils/versionCheck'
 import TDesign from 'tdesign-vue-next'
 import 'tdesign-vue-next/es/style/index.css'
 import 'normalize.css/normalize.css'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 // 启动版本检测服务 (20秒检查一次)
 startVersionCheck(1000 * 20)
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate) // 注入插件
 // 挂载到app上
-createApp(App)
-  .use(router)
-  .use(createPinia())
-  .use(TDesign)
-
-  .mount('#app')
+createApp(App).use(router).use(pinia).use(TDesign).mount('#app')
