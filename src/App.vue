@@ -36,7 +36,7 @@ onMounted(async () => {
   z-index: 1000;
   display: flex;
   justify-content: center;
-  padding: 6px 8px;
+  padding: 16px 8px;
   font-size: 12px;
   color: #333;
   background: rgba(255, 255, 255, 0.85);

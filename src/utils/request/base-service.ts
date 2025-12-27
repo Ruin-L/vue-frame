@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { DialogPlugin } from 'tdesign-vue-next'
 // 获取浏览器中的url地址和端口号并拼接
 /* import { config } from 'public/config.js'
 const getBaseUrl = () => {
@@ -13,8 +13,8 @@ const getBaseUrl = () => {
 } */
 // 创建一个新的axios实例
 const instance: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_BASE_API,
-  timeout: 30000,
+  baseURL: '/api',
+  timeout: 3000000,
   withCredentials: false,
   headers: {
     'Content-Type': 'application/json'
@@ -46,14 +46,31 @@ instance.interceptors.response.use(
 
     const data = response.data
     console.log('接口返回', data)
-    // 判断接口返回的 Message 字段是否为 Success
-    if (!data?.Message.includes('Success')) {
+
+    // 对于健康检查和数据源状态检查接口，直接返回数据
+    if (
+      response.config.url?.includes('/health') ||
+      response.config.url?.includes('/data-source-status')
+    ) {
+      return response
+    }
+
+    // 判断接口返回的 Message 字段是否为 Success（对于其他接口）
+    if (data && data.Message && !data.Message.includes('Success')) {
       // 如果不是 Success，则将请求视为失败
-      ElMessageBox.alert(JSON.stringify(data), '错误', {
-        confirmButtonText: '确定',
-        type: 'error',
-        dangerouslyUseHTMLString: false
+      const errorDia = DialogPlugin({
+        header: '错误',
+        body: `接口${data.config.url}报错！【${JSON.stringify(data) || '未知错误'}】`,
+        confirmBtn: null,
+        cancelBtn: null,
+        destroyOnClose: true,
+        theme: 'danger',
+        zIndex: 10000,
+        onClose: () => {
+          errorDia.destroy()
+        }
       })
+
       return Promise.reject({
         response: {
           status: 200,
@@ -62,8 +79,8 @@ instance.interceptors.response.use(
         }
       })
     }
-    // 如果是 Success，则返回数据
-    return data
+    // 如果是 Success，或者没有Message字段，则返回数据
+    return response
   },
   (error: any) => {
     // 对响应错误做点什么
@@ -81,19 +98,19 @@ instance.interceptors.response.use(
     }
 
     console.error('报错', error)
-
-    ElMessageBox.alert(
-      `接口：【${error.config.url}】报错
-      ${error.message}
-      ${JSON.stringify(error?.response?.data)}
-      `,
-      '报错',
-      {
-        confirmButtonText: '确定',
-        type: 'error',
-        dangerouslyUseHTMLString: false
+    const errorDia = DialogPlugin({
+      header: '错误',
+      body: `接口${error.config.url}报错！【${JSON.stringify(error.message) || '未知错误'}】`,
+      confirmBtn: null,
+      cancelBtn: null,
+      destroyOnClose: true,
+      theme: 'danger',
+      zIndex: 10000,
+      onClose: () => {
+        errorDia.destroy()
       }
-    )
+    })
+
     return Promise.reject(error)
   }
 )
